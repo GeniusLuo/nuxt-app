@@ -18,5 +18,8 @@ module.exports = {
     'prettier'
   ],
   // add your custom rules here
-  rules: { "vue/comment-directive": 'off' }
+  rules: {
+    "vue/comment-directive": 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+  }
 }

@@ -20,6 +20,7 @@
     }
   },
   "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.3.6",
     "nuxt": "^2.0.0"
   },
@@ -35,6 +36,6 @@
     "lint-staged": "^10.0.0",
     "prettier": "^1.19.1",
     "sass": "^1.36.0",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^10.0.1"
   }
 }

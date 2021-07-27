@@ -2,24 +2,11 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">
-        nuxt-app
-      </h1>
-      <h2 class="subtitle">
-        My super-excellent Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <p>邮箱：<input v-model="username" type="text" /></p>
+      <p>密码：<input v-model="password" type="text" /></p>
+      <p>验证码：<input v-model="code" type="text" /></p>
+      <p>sid：<input v-model="sid" type="text" /></p>
+      <p><button type="button">登录</button></p>
     </div>
   </div>
 </template>
@@ -28,9 +15,24 @@
 import Logo from '~/components/Logo.vue'
 
 export default {
+  name: 'Index',
   components: {
     Logo
+  },
+  data() {
+    return {
+      username: '',
+      password: '',
+      code: '',
+      sid: ''
+    }
   }
+  // async asyncData({ $axios }) {
+  //   const result = await $axios.$get('http://localhost:4000/posts')
+  //   return {
+  //     posts: result
+  //   }
+  // }
 }
 </script>
 
