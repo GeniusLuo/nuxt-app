@@ -6,7 +6,7 @@
       <p>密码：<input v-model="password" type="text" /></p>
       <p>验证码：<input v-model="code" type="text" /></p>
       <p>sid：<input v-model="sid" type="text" /></p>
-      <p><button type="button">登录</button></p>
+      <p><button type="button" @click="login">登录</button></p>
     </div>
   </div>
 </template>
@@ -25,6 +25,21 @@ export default {
       password: '',
       code: '',
       sid: ''
+    }
+  },
+  mounted() {
+    window.vue = this
+  },
+  methods: {
+    login() {
+      this.$auth.loginWith('local', {
+        data: {
+          username: this.username,
+          password: this.password,
+          code: this.code,
+          sid: this.sid
+        }
+      })
     }
   }
   // async asyncData({ $axios }) {

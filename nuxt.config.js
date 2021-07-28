@@ -16,6 +16,10 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  server: {
+    port: 8080,
+    host: '0.0.0.0'
+  },
   /*
    ** Customize the progress-bar color
    */
@@ -47,7 +51,9 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:3000'
+  },
   /*
    ** Build configuration
    */
@@ -56,5 +62,27 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: '/login/login',
+            method: 'post',
+            propertyName: 'token'
+          },
+          logout: {
+            url: '',
+            method: 'post'
+          },
+          user: {
+            url: '/public/info',
+            method: 'get',
+            propertyName: 'data'
+          }
+        }
+      }
+    }
   }
 }
